@@ -1,21 +1,12 @@
-node 7-multi_c.js 2
-# Output:
-# C is fun
-# C is fun
-
-node 7-multi_c.js 5
-# Output:
-# C is fun
-# C is fun
-# C is fun
-# C is fun
-# C is fun
-
-node 7-multi_c.js abc
-# Output:
-# Missing number of occurrences
-
-node 7-multi_c.js -3
-# Output:
-# (No output, as the loop condition i < -3 would not be met. This is acceptable behavior
-# given the problem description and common interpretations of "print X times" where X is non-negative.)
+ process.argv[0] is 'node'
+ process.argv[1] is the script name '7-multi_c.js'
+ process.argv[2] is the first argument provided by the user
+const numOccurrences = parseInt(process.argv[2]);
+if (isNaN(numOccurrences)) {
+  console.log("Missing number of occurrences");
+} else {
+   Use a loop to print "C is fun" the specified number of times
+  for (let i = 0; i < numOccurrences; i++) {
+    console.log("C is fun");
+  }
+}
