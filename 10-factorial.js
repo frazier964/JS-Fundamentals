@@ -1,34 +1,32 @@
-public class Factorial {
+
+function factorial(n) {
   
-    public static long factorial(long n) {
-        .
-        if (n < 0) {
-            
-            return 1;
-        }
-        if (n == 0) {
-            return 1; 
-        }
-        
-        return n * factorial(n - 1);
+    const num = Number(n); 
+
+ 
+    if (isNaN(num) || num < 0) {
+        return 1;
     }
 
-    public static void main(String[] args) {
-       
-        if (args.length == 0) {
-            System.out.println("Usage: java Factorial <number>");
-           
-            System.out.println(factorial(0)); 
-            return;
-        }
-
-        try {
-            
-            long num = Long.parseLong(args[0]);
-            
-            System.out.println(factorial(num));
-        } catch (NumberFormatException e) {
-            
-            System.out.println(1);
-        }
+   
+    if (num === 0) {
+        return 1;
     }
+
+
+    return num * factorial(num - 1);
+}
+
+
+const inputArg = process.argv[2];
+
+
+if (inputArg === undefined) {
+  
+    console.log(factorial(NaN)); 
+} else {
+    
+    console.log(factorial(inputArg));
+}
+
+
