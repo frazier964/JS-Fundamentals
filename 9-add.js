@@ -1,12 +1,25 @@
-const num1 = parseInt(a);
-  const num2 = parseInt(b);
-if (isNaN(num1) || isNaN(num2)) {
-    return NaN;
-   } else {
-    return num1 + num2;
-   }
+
+function add(a, b) {
+  
+    const numA = Number(a);
+    const numB = Number(b);
+
+
+    if (isNaN(numA) || isNaN(numB)) {
+        return NaN;
+    }
+
+    
+    return numA + numB;
 }
-const arg1 = process.argv[2];
-const arg2 = process.argv[3];
-const result = add(arg1, arg2);
+
+
+const firstArg = process.argv[2];
+const secondArg = process.argv[3];
+
+
+const result = add(firstArg, secondArg);
+
+
 console.log(result);
+
