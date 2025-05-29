@@ -1,16 +1,22 @@
-const size = parseInt(process.argv[2]);
-if (isNaN(size)) {
-  console.log("Missing size");
+
+const sizeInput = process.argv[2]; 
+
+
+const size = Number(sizeInput);
+
+
+if (isNaN(size) || !Number.isInteger(size) || size <= 0) {
+    
+    console.log("Missing size");
 } else {
- if (size <= 0) {
- } else {
- for (let i = 0; i < size; i++) {
-      let row = '';
-for (let j = 0; j < size; j++) {
-        row += 'x';
-      }
- console.log(row);
+   
+    for (let i = 0; i < size; i++) { 
+        let row = ''; 
+       
+        for (let j = 0; j < size; j++) { 
+            row += 'x';
+        }
+        console.log(row);
     }
-  }
 }
 
